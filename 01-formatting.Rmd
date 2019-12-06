@@ -1,57 +1,84 @@
 # Formatting
+The _output.yml file will affect the preview.
 
 ## Pandoc markdown {#pandoc-markdown}
 
 ### Text formatting
 
-*italics*
+*italics* _text_
+`*italics*` or `_italics_`
 
-_italics_
-
-**bold**
-
-__bold__
+**bold** __text__
+`**bold**` or `__bold__`
 
 ~subscript~
+`~subscript~`
 
 ^superscript^
+`^superscript^`
 
-Equation: $a^2 + b^2 = c^2$
-
+$a^2 + b^2 = c^2$
+`$a^2 + b^2 = c^2$`
 More here about equations^[https://bookdown.org/yihui/bookdown/markdown-syntax.html#fn3]
 
 [Link to google](https://www.google.com)
+`[Link to google](https://www.google.com)`
 
 `code`
+`` `code` ``
 
-This is a footnote^[This is a footnote.]
+This is a footnote^[Footnote text here.]
+`This is a footnote^[Footnote text here.]`
 
-### Cross-ref
+### Cross-referencing
 
-Link to other sections using:
-
-Section ID. See: \@ref(bookdown-formatting)
+For gitbook format, use section ID for section number. E.g., see \@ref(bookdown-format)
+`\@ref(bookdown-format)`
 
 The section header text. See: [Bookdown formatting]
+`[Bookdown formatting]`
 
 Customised text. [Please see the bookdown section][Bookdown formatting]
+`[Please see the bookdown section][Bookdown formatting]`
 
 Using customised text and the id. See: [bookdown jumbo](#bookdown-format)
+`[bookdown jumbo](#bookdown-format)`
 
 ### Blocks
+Regular code block (three back ticks):
+```
+print("Hello word!")
+```
 
-Code chunk:
-
-```{r eval=FALSE}
+R code chunk `` ```{r, eval = FALSE}``:
+```{r, eval = FALSE}
 # R code block formatting
 install.packages("bookdown")
 ```
+See [bookdown formatting](#bookdown-r) for more sophisticated formatting
+
+
+Markdown code:
+```markdown
+Markdown formatted code
+```
+````
+```markdown
+Markdown formatted code
+```
+````
 
 Block quote:
 
 > "Block quote."
 >
 > --- Speaker's Name
+
+```markdown
+> "Block quote."
+>
+> --- Speaker's Name
+```
 
 ### Lists
 
@@ -67,6 +94,10 @@ Block quote:
 
 ![alt text for image](images/test-image-1.jpg)
 
+`![alt text for image](images/test-image-1.jpg)`
+
+See subsection on [bookdown tables](#bookdown-tables) for more sophisticated code.
+
 ## Bookdown formatting {#bookdown-format}
 
 ### Inline R code
@@ -77,18 +108,18 @@ R formatting:
 Regular code formatting:
 `library(tidyverse)`
 
-### R code chunk
+### R code chunk {#bookdown-r}
 
-```{r code-name-1, fig.cap = "A code chunk caption."}
+```{r title-of-code-chunk, fig.cap = "A code chunk caption."}
 library(tidyverse) # This installs the package for the chunk
 
 1 + 1 # gives the output
 rnorm(10) # 10 random numbers
 plot(dist ~ speed, cars) # scatterplot
 ```
-Reference the code chunk: see \@ref(fig:code-name-1)
+Reference the code chunk: see \@ref(fig:title-of-code-chunk)
 
-### Tables
+### Tables {#bookdown-tables}
 
 ```{r, echo = FALSE}
 

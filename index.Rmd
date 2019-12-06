@@ -3,6 +3,7 @@ title: "A Bookdown Test"
 author: "Koo"
 date: "`r Sys.Date()`"
 output: bookdown::gitbook
+documentclass: book
 #bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
