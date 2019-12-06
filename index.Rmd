@@ -2,12 +2,7 @@
 title: "A Bookdown Test"
 author: "Koo"
 date: "`r Sys.Date()`"
-output:
-  html_document:
-    toc: true
-    toc_float: true
-    toc_depth: 2
-    number_sections: true
+output: bookdown::gitbook
 #bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
@@ -15,7 +10,7 @@ github-repo: koobot/bookdown-test
 description: "This is my attempt at testing bookdown"
 ---
 
-# Front page
+# Front page {#front-page}
 
 This is the front page.
 
@@ -28,7 +23,12 @@ library(bookdown)
 ```
 Clicked the `Knit` button in R Studio to preview.
 
+Reference \@ref(help)
 
 Then in R Studio `Addins > Bookdown > Preview book`
+
+## Help {#help}
+
 [Markdown help](https://bookdown.org/yihui/rmarkdown/html-document.html#table-of-contents)
+
 [Bookdown help](https://bookdown.org/yihui/bookdown)
