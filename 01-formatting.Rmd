@@ -1,0 +1,118 @@
+# Formatting
+
+## Pandoc markdown {#pandoc-markdown}
+
+### Text formatting
+
+*italics*
+
+_italics_
+
+**bold**
+
+__bold__
+
+~subscript~
+
+^superscript^
+
+Equation: $a^2 + b^2 = c^2$
+
+More here about equations^[https://bookdown.org/yihui/bookdown/markdown-syntax.html#fn3]
+
+[Link to google](https://www.google.com)
+
+`code`
+
+This is a footnote^[This is a footnote.]
+
+### Cross-ref
+
+Link to other sections using:
+
+Section ID. See: \@ref(bookdown-formatting)
+
+The section header text. See: [Bookdown formatting]
+
+Customised text. [Please see the bookdown section][Bookdown formatting]
+
+Using customised text and the id. See: [bookdown jumbo](#bookdown-format)
+
+### Blocks
+
+Code chunk:
+
+```{r eval=FALSE}
+# R code block formatting
+install.packages("bookdown")
+```
+
+Block quote:
+
+> "Block quote."
+>
+> --- Speaker's Name
+
+### Lists
+
+- dash
++ cross
+* Star
+    - Four spaces
+
+1. Numbered lists
+2. Looks like the numbering is manual
+
+### Image
+
+![alt text for image](images/test-image-1.jpg)
+
+## Bookdown formatting {#bookdown-format}
+
+### Inline R code
+
+R formatting:
+`r library(tidyverse)`
+
+Regular code formatting:
+`library(tidyverse)`
+
+### R code chunk
+
+```{r code-name-1, fig.cap = "A code chunk caption."}
+library(tidyverse) # This installs the package for the chunk
+
+1 + 1 # gives the output
+rnorm(10) # 10 random numbers
+plot(dist ~ speed, cars) # scatterplot
+```
+Reference the code chunk: see \@ref(fig:code-name-1)
+
+### Tables
+
+```{r, echo = FALSE}
+
+# echo = FALSE so the code and this comment don't show up. Only the output.
+
+knitr::kable(
+  head(mtcars[, 1:8], 10), booktabs = TRUE,
+  caption = "A table of the first 10 rows of the mtcars data."
+)
+```
+
+### Equations
+
+This is a numbered equation:
+\begin{equation}
+  f\left(k\right) = \binom{n}{k}
+  (\#eq:name1)
+\end{equation}
+
+Refer to the equation, see equation \@ref(eq:name1).
+
+Here'san un-numbered equation:
+\begin{equation*}
+  \frac{d}{dx}=f(x)
+\end{equation*}
+
+More equation formatting [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html)
